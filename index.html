@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Victoria R. Li</title>
+    <style>
+        .container {
+          margin: 0 auto;
+          padding: 0 40px; /* Consistent padding for both header and body */
+          max-width: 1200px; /* Optional: to keep content centered on larger screens */
+        }
+        body {
+          font-family: 'Calibri', sans-serif;
+          margin: 0;
+          padding: 0; 
+          line-height: 1.6;
+          color: #333;
+        }
+        .header {
+          font-size: 24px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 0;
+          font-family: 'Calibri', sans-serif;
+          border-bottom: 1px solid #eaeaea;
+          margin-bottom: 15px;
+        }
+        .header-left {
+          display: flex;
+          flex-direction: column;
+        }
+        .subheader {
+          font-size: 14px;
+          color: #666;
+        }
+        .social-icons {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+        }
+        .social-icons a {
+          color: #555;
+          font-size: 20px;
+          margin-left: 15px;
+          text-decoration: none;
+        }
+        .social-icons a:hover {
+          opacity: 0.7;
+        }
+        .bio {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .bio a {
+            color: inherit; 
+            text-decoration: underline; 
+        }
+        .bio a.blue-link {
+            color: #007bff; 
+            text-decoration: none; 
+        }
+        .bio a:hover {
+            text-decoration: none;
+        }
+        .publications {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .publication-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .publication-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .publication-authors {
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .publication-details a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .publication-details a:hover {
+            text-decoration: underline;
+        }
+        .small-margin {
+          margin-bottom: 7px; 
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-left">
+        <div class="name">Victoria R. Li</div>
+        <div class="subheader">Email: vrli [at] college [dot] harvard [dot] edu</div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/victoria-r-li/" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://x.com/victoria_r_li" target="_blank" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/vli31" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </header>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <div class="bio small-margin">
+        <p>
+          Hi! I'm Victoria, an undergraduate at Harvard studying Computer Science and Statistics 
+          (with some history of science and mind, brain, and behavior mixed in).
+          Outside class, I work on AI research at the <a href="https://kempnerinstitute.harvard.edu/">Harvard Kempner Institute</a>, where I 
+          study <b>ML interpretability</b> and <b>human-AI interaction</b>. I am also 
+          excited about applications of ML in biology, health, and cognitive science. 
+          <b>I will be attending EMNLP and NeurIPS this year, and I would love to meet anyone else going!</b></p>
+        <p>
+          On campus, I spend time teaching math, computer science, and statistics courses, 
+          thinking about <a href="https://haist.ai/">AI safety</a>,
+          facilitating projects applying <a href="https://techglobalhealth.org/">technology to global health</a>, 
+          and supporting <a href="https://www.huwics.com/">women in CS</a>.
+        </p>
+        Please feel free to <a href="mailto:vrli@college.harvard.edu" class="blue-link">reach out</a>––I'd love to chat!
+    </div>
+
+    <div class="publications">Publications</div>
+
+    <div class="publication-card">
+        <div class="publication-title">Causal Promises but Correlational Delivers: A Study of Circuit Mechanisms and Model Behaviors</div>
+        <div class="publication-authors">Jenny Kaufmann*, <u>Victoria R. Li*</u>, Martin Wattenberg, David Alvarez-Melis, Naomi Saphra</div>
+        <div class="publication-details">NeurIPS Science for Deep Learning Workshop (Dec 2024)</div>
+    </div>
+
+    <div class="publication-card">
+        <div class="publication-title">Twin Studies of Factors in OOD Generalization</div>
+        <div class="publication-authors"><u>Victoria R. Li*</u>, Jenny Kaufmann*, David Alvarez-Melis, Naomi Saphra</div>
+        <div class="publication-details">NeurIPS Science for Deep Learning Workshop (Dec 2024)</div>
+    </div>
+
+    <div class="publication-card">
+        <div class="publication-title">ChatGPT Doesn't Trust Chargers Fans: Guardrail Sensitivity in Context</div>
+        <div class="publication-authors"><u>Victoria R. Li*</u>, Yida Chen*, Naomi Saphra</div>
+        <div class="publication-details"><i>Empirical Methods for Natural Language Processing (EMNLP)</i> (Nov 2024) / <a href="https://arxiv.org/abs/2407.06866">arXiv</a> / <a href="https://github.com/vli31/llm-guardrail-sensitivity">Github</a> </div>
+    </div>
+
+    <div class="publication-card">
+        <div class="publication-title">Widespread Impact of Natural Genetic Variations in CRISPR/Cas9 Outcomes</div>
+        <div class="publication-authors"><u>Victoria R Li</u>, Alicja Tadych, Aaron Wong, & Zijun Zhang</div>
+        <div class="publication-details"><a href="https://doi.org/10.1101/2023.09.26.559657"><i>The CRISPR Journal</i></i></a> (Oct 2024) / Equity Track @ ISMB/ECCB / Database: <a href=croton.princeton.edu>croton.princeton.edu</a></div> 
+    </div>
+
+    <div class="publication-card">
+        <div class="publication-title">CROTON: An Automated and Variant-Aware Deep Learning Framework for Predicting CRISPR/Cas9 Editing Outcomes</div>
+        <div class="publication-authors"><u>Victoria R Li</u>, Zijun Zhang, Olga Troyanskaya</div>
+        <div class="publication-details"><a href="https://doi.org/10.1093/bioinformatics/btab268"><i>Bioinformatics</i></a> (Jul 2021) / ML Track @ ISMB/ECCB / Extremely highly cited for field / <a href="https://github.com/vli31/CROTON">Github</a></div>
+  </div>
+</body>
+</html>
