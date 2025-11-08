@@ -8,8 +8,8 @@
     <style>
         .container {
           margin: 0 auto;
-          padding: 0 40px; /* Consistent padding for both header and body */
-          max-width: 1200px; /* Optional: to keep content centered on larger screens */
+          padding: 0 40px; 
+          max-width: 1200px; 
         }
         body {
           font-family: 'Calibri', sans-serif;
@@ -77,6 +77,21 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            min-height: 160px;
+            align-items: flex-start;
+        }
+        .publication-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: auto;
+            max-height: 130px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .publication-content {
+            flex: 1;
         }
         .publication-title {
             font-weight: bold;
@@ -94,7 +109,99 @@
             text-decoration: underline;
         }
         .small-margin {
-          margin-bottom: 7px; 
+          margin-bottom: 7px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+        }
+        .subsection-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        .education-item {
+            margin-bottom: 12px;
+        }
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+        .education-degree {
+            font-style: italic;
+        }
+        .education-details {
+            color: #555;
+            margin-top: 3px;
+            font-size: 15px;
+        }
+        .research-item {
+            margin-bottom: 15px;
+        }
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+        .research-description {
+            color: #555;
+            margin-top: 3px;
+            font-size: 15px;
+        }
+        .publication-description {
+            color: #666;
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .publication-links {
+            margin-top: 8px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+        }
+        .publication-links a, .publication-links span {
+            color: #5a8cc7;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .publication-links .nowrap {
+            white-space: nowrap;
+        }
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+        .publication-links i {
+            font-size: 13px;
+        }
+        .publication-links span {
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .publication-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .publication-image {
+                width: 100%;
+                max-width: 300px;
+                max-height: none;
+                align-self: flex-start;
+            }
+            .publication-content {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -106,6 +213,9 @@
         <div class="subheader">Email: vrli [at] college [dot] harvard [dot] edu</div>
       </div>
       <div class="social-icons">
+        <a href="https://scholar.google.com/citations?user=a9WppVsAAAAJ&hl=en" target="_blank" title="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
         <a href="https://www.linkedin.com/in/victoria-r-li/" target="_blank" title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
@@ -122,51 +232,82 @@
     
     <div class="bio small-margin">
         <p>
-          Hi! I'm Victoria, an undergraduate at Harvard studying Computer Science and Statistics 
-          (with some History of Science and Mind, Brain, and Behavior mixed in).
-          Outside class, I work on AI research at the <a href="https://kempnerinstitute.harvard.edu/">Harvard Kempner Institute</a>, where I 
-          study <b>ML interpretability</b> and <b>human-AI interaction</b>. I am also 
-          excited about intersections of ML with biology, health, and cognitive science. 
-          <b>I will be attending EMNLP and NeurIPS this year, and I would love to meet anyone else going!</b></p>
-        <p>
-          On campus, I spend time teaching math, computer science, and statistics courses, 
-          thinking about <a href="https://haist.ai/">AI safety</a>,
-          facilitating projects applying <a href="https://techglobalhealth.org/">technology to global health</a>, 
-          and supporting <a href="https://www.huwics.com/">women in CS</a>.
+        Hi! I'm Victoria, a student at Harvard studying Computer Science and Statistics (with some Mind Brain & Behavior and Economics mixed in).
+        I work on AI research at the Harvard <a href="https://kempnerinstitute.harvard.edu/">Kempner Institute</a> and
+        <a href="https://insightandinteraction.com/">Insight + Interaction Lab</a>, where I'm fortunate to learn from and collaborate with Martin Wattenberg, Naomi Saphra, Yonatan Belinkov, and David Alvarez-Melis.
         </p>
-        Please feel free to <a href="mailto:vrli@college.harvard.edu" class="blue-link">reach out</a>––I'd love to chat!
+          <p>I'm interested in  <b>interpretability</b> and <b>human-AI interaction</b>. I'm also
+  excited about intersections of AI with biology, health, and cognitive science. </p> 
+          <p>Outside research, I've spent time singing, teaching, supporting women in CS, and thinking about <a href="https://techglobalhealth.org/">tech for global health</a> and <a href="https://aisst.ai/">AI safety</a>.</p>
     </div>
 
-    <div class="publications">Publications</div>
+    <div class="section-title">Publications</div>
 
     <div class="publication-card">
-        <div class="publication-title">Causal Promises but Correlational Delivers: A Study of Circuit Mechanisms and Model Behaviors</div>
-        <div class="publication-authors">Jenny Kaufmann*, <u>Victoria R. Li*</u>, Martin Wattenberg, David Alvarez-Melis, Naomi Saphra</div>
-        <div class="publication-details">NeurIPS Science for Deep Learning Workshop (Dec 2024)</div>
+        <img src="images/vis-helps-ai.png" alt="Does Visualization Help AI Understand Data?" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Does Visualization Help AI Understand Data?</div>
+            <div class="publication-authors"><u>Victoria R. Li*</u>, Johnathan L. Sun*, Martin Wattenberg</div>
+            <div class="publication-details"><i>IEEE Visualization (VIS)</i> (Nov 2025)</div>
+            <div class="publication-links">
+                <a href="https://arxiv.org/abs/2507.18022"><i class="far fa-file-alt"></i> Paper</a>
+                <a href="https://informationplusconference.com/2025/"><i class="fas fa-users"></i> Presentation @ Info+</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="publication-card">
+      <img src="images/id-predict-ood.png" alt="Can Interpretation Predict Behavior on Unseen Data?" class="publication-image">
+      <div class="publication-content">
+          <div class="publication-title">Can Interpretation Predict Behavior on Unseen Data?</div>
+          <div class="publication-authors"><u>Victoria R. Li*</u>, Jenny Kaufmann*, Martin Wattenberg, David Alvarez-Melis, Naomi Saphra</div>
+          <div class="publication-details">Under Review, 3 associated workshop papers @ NeurIPS Sci4DL and MechInterp </div>
+          <div class="publication-links">
+              <a href="https://arxiv.org/abs/2507.06445"><i class="far fa-file-alt"></i> Paper</a>
+              <a href="https://www.quantamagazine.org/to-understand-ai-watch-how-it-evolves-20250924/"><i class="fas fa-search"></i> Press @ Naomi's Profile in Quanta</a>
+          </div>
+      </div>
+  </div>
+
+    <div class="publication-card">
+        <img src="images/chargers-fans.png" alt="ChatGPT Doesn't Trust Chargers Fans" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">ChatGPT Doesn't Trust Chargers Fans: Guardrail Sensitivity in Context</div>
+            <div class="publication-authors"><u>Victoria R. Li*</u>, Yida Chen*, Naomi Saphra</div>
+            <div class="publication-details"><i>Empirical Methods in Natural Language Processing (EMNLP)</i> (Nov 2024)</div>
+            <div class="publication-links">
+                <a href="https://arxiv.org/abs/2407.06866"><i class="far fa-file-alt"></i> Paper</a>
+                <a href="https://www.theregister.com/2025/08/27/chatgpt_has_a_problem_with/"><i class="fas fa-search"></i> Press @ The Register</a>
+            </div>
+        </div>
     </div>
 
     <div class="publication-card">
-        <div class="publication-title">Twin Studies of Factors in Out of Distribution Generalization</div>
-        <div class="publication-authors"><u>Victoria R. Li*</u>, Jenny Kaufmann*, David Alvarez-Melis, Naomi Saphra</div>
-        <div class="publication-details">NeurIPS Science for Deep Learning Workshop (Dec 2024)</div>
+        <img src="images/crotondb.png" alt="Widespread Impact of Natural Genetic Variations in CRISPR/Cas9 Outcomes" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">Widespread Impact of Natural Genetic Variations in CRISPR/Cas9 Outcomes</div>
+            <div class="publication-authors"><u>Victoria R. Li</u>, Tinghui Wu, Alicja Tadych, Aaron Wong, Zijun Zhang</div>
+            <div class="publication-details"><i>The CRISPR Journal</i> (Oct 2024)</div>
+            <div class="publication-links">
+                <a href="https://www.biorxiv.org/content/10.1101/2023.09.26.559657v2"><i class="far fa-file-alt"></i> Paper</a>
+                <a href="https://croton.princeton.edu"><i class="fas fa-globe"></i> Demo</a>
+            </div>
+        </div>
     </div>
 
     <div class="publication-card">
-        <div class="publication-title">ChatGPT Doesn't Trust Chargers Fans: Guardrail Sensitivity in Context</div>
-        <div class="publication-authors"><u>Victoria R. Li*</u>, Yida Chen*, Naomi Saphra</div>
-        <div class="publication-details"><i>Empirical Methods for Natural Language Processing (EMNLP)</i> (Nov 2024) / <a href="https://arxiv.org/abs/2407.06866">arXiv</a> / <a href="https://github.com/vli31/llm-guardrail-sensitivity">Github</a> </div>
+        <img src="images/croton.png" alt="CROTON: An Automated and Variant-aware Deep Learning Framework" class="publication-image">
+        <div class="publication-content">
+            <div class="publication-title">CROTON: An Automated and Variant-aware Deep Learning Framework for Predicting CRISPR/Cas9 Editing Outcomes</div>
+            <div class="publication-authors"><u>Victoria R. Li</u>, Zijun Zhang, Olga Troyanskaya</div>
+            <div class="publication-details"><i>Bioinformatics</i> (Jul 2021)</div>
+            <div class="publication-links">
+                <a href="https://academic.oup.com/bioinformatics/article/37/Supplement_1/i342/6319668"><i class="far fa-file-alt"></i> Paper</a>
+                <span style="color: #666;"><i class="fas fa-users"></i> Presentations @ ISMB/ECCB, NIH SCGE</span>
+            </div>
+        </div>
     </div>
-
-    <div class="publication-card">
-        <div class="publication-title">Widespread Impact of Natural Genetic Variations in CRISPR-Cas9 Outcomes</div>
-        <div class="publication-authors"><u>Victoria R Li</u>, Tinghui Wu, Alicja Tadych, Aaron Wong, Zijun Zhang</div>
-        <div class="publication-details"><a href="https://doi.org/10.1089/crispr.2024.0020"><i>The CRISPR Journal</i></i></a> (Oct 2024) / Equity Track @ ISMB/ECCB / Database: <a href=https://croton.princeton.edu>croton.princeton.edu</a></div> 
-    </div>
-
-    <div class="publication-card">
-        <div class="publication-title">CROTON: An Automated and Variant-Aware Deep Learning Framework for Predicting CRISPR/Cas9 Editing Outcomes</div>
-        <div class="publication-authors"><u>Victoria R Li</u>, Zijun Zhang, Olga Troyanskaya</div>
-        <div class="publication-details"><a href="https://doi.org/10.1093/bioinformatics/btab268"><i>Bioinformatics</i></a> (Jul 2021) / ML Track @ ISMB/ECCB / Extremely highly cited for field / <a href="https://github.com/vli31/CROTON">Github</a></div>
   </div>
 </body>
 </html>
